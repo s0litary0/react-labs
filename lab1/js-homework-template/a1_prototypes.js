@@ -2,44 +2,43 @@ function runA1() {
     console.clear();
     console.log("Running A1 — Prototypes");
 
-    // 1) Base "class"
+
     function Shape() {}
     Shape.prototype.getArea = function () { return 0; };
+
     Shape.prototype.describe = function () { return "Shape"; };
 
-    // 2) Rectangle
-    // TODO(a): Make Rectangle a constructor that calls the parent (Shape) and
-    //          stores width/height on the instance.
-    function Rectangle(width, height) { /* TODO */ }
 
-    // TODO(b): Prototype chain — link Rectangle.prototype -> Shape.prototype
-    //          and restore Rectangle.prototype.constructor.
-    // Rectangle.prototype = ...
-    // Rectangle.prototype.constructor = ...
+    function Rectangle(width, height) { 
+        Shape.call(this);
+        this.width = width;
+        this.height = height;
+    }
 
-    // TODO(c): Override getArea() on Rectangle.prototype to return width*height.
-    // Rectangle.prototype.getArea = function(){ /* TODO */ };
+    Rectangle.prototype = Object.create(Shape.prototype);
+    Rectangle.prototype.constructor = Rectangle;
 
-    // TODO(d): Override describe() on Rectangle.prototype. Call the parent
-    //          describe via Shape.prototype.describe.call(this) and append
-    //          " Rectangle WxH".
-    // Rectangle.prototype.describe = function(){ /* TODO */ };
+    Rectangle.prototype.getArea = function() { 
+        return this.width * this.height;
+    }
 
-    // 3) Square
-    // TODO(e): Square(side) should call Rectangle with width=height=side.
-    function Square(side) { /* TODO */ }
+    Rectangle.prototype.describe = function() {
+        console.log(this);
+        return Shape.prototype.describe.call(this) +
+            ` Rectangle ${this.width}x${this.height}`;
+    };
 
-    // TODO(f): Prototype chain — link Square.prototype -> Rectangle.prototype
-    //          and restore Square.prototype.constructor.
-    // Square.prototype = ...
-    // Square.prototype.constructor = ...
+    function Square(side) {
+        Rectangle.call(this, side, side);
+    }
+    
+    Square.prototype = Object.create(Rectangle.prototype);
+    Square.prototype.constructor = Square;
 
-    // TODO(g): Override describe() on Square.prototype. Call the parent
-    //          (Rectangle) describe and append " Square side=S".
-    // Square.prototype.describe = function(){ /* TODO */ };
+    Square.prototype.describe = function() {
+        return Rectangle.prototype.describe.call(this) + ` Square side=${this.width}`
+    }
 
-    // ─────────────────────────────────────────────────────────────────────
-    // Self-checks (leave these as-is; adjust only when implementing)
     try {
         const r1 = new Rectangle(3, 4);
         const r2 = new Rectangle(5, 6);
