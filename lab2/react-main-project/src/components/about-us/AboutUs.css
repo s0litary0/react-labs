@@ -1,0 +1,86 @@
+.about-section {
+  height: 100%;
+  padding: 60px 20px;
+  background: #f9f9f9;           
+  color: #333;
+}
+
+.about-section .container {
+  max-width: 800px;
+  margin: 0 auto;                  
+  text-align: center;
+}
+
+
+.about-section .title-container {
+  margin-bottom: 30px;
+}
+
+.about-section .title {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.about-section .title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #4a90e2;               
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.about-section .text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.about-section p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+
+.about-section .list-style-one {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-section .list-style-one > li {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.about-section .list-style-one > li a {
+  color: #4a90e2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.about-section .list-style-one > li a:hover {
+  color: #1f65b2;
+  text-decoration: underline;
+}
+
+.about-section .list-style-one li ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 8px;
+}
+
+.about-section .list-style-one li ul li {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.about-section .list-style-one li ul li a {
+  font-weight: 500;
+}
+
