@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .open-sans-main-text {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
@@ -6,7 +12,6 @@
   font-variation-settings:
     "wdth" 100;
 }
-
 
 body, html {
     height: 100%;
