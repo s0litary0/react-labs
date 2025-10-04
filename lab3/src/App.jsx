@@ -1,33 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
 import './App.css'
+import WheatherCard from './WheatherCard/WheatherCard';
+import LoadButton from './LoadButton/LoadButton';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [wheather, setWeather] = useState();
+  
+  const load = () => {
+    const url = new URL("http://api.weatherapi.com/v1/forecast.json");
+    url.searchParams.set('key', '2a2f3d3e4bdc46fe90e154817250410');
+    url.searchParams.set('q', 'Almaty');
+    url.searchParams.set('days', '14');
+
+    fetch(url)
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      setWeather(data);
+      console.log(data);
+      // console.log(wheather);
+    })
+    .catch(err => console.log(err.message))
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <LoadButton handler={load}/>
+      <ul className='list'>
+      {wheather && wheather.forecast.forecastday.map((day) => (
+        <li key={day['date_epoch']}>
+          <WheatherCard 
+          date={new Date(day.date)} 
+          temp={day.hour[11].temp_c} 
+          condition={day.day.condition.text}/>
+        </li>
+      ))}
+      </ul>
     </>
   )
 }
