@@ -1,6 +1,7 @@
 import './WheatherCard.css'
 import cloudy from '../assets/icons/wheather/PartlyCloudy.png'
 import sunny from '../assets/icons/wheather/Sunny.png'
+import rainy from '../assets/icons/wheather/Rainy.png'
 
 
 export default function WheatherCard({date, temp, condition}) {
@@ -16,6 +17,9 @@ export default function WheatherCard({date, temp, condition}) {
         ['Sunny', sunny],
         ['Partly Cloudy', cloudy],
         ['Overcast', cloudy],
+        ['Cloudy', cloudy],
+        ['Moderate rain', rainy],
+        ['Patchy rain nearby', rainy]
     ]);
     return (
         <article className='wheather-card'>
