@@ -1,0 +1,45 @@
+@keyframes wheather-card-animation {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.wheather-card { 
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.2px);
+    -webkit-backdrop-filter: blur(13.2px);
+    height: 500px;
+    width: 180px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-radius: 5px;
+    padding: 20px;
+
+    animation: wheather-card-animation 1s ease 0s 1 normal forwards;
+
+}
+
+.date {
+    font-weight: 600;
+    font-size: 25px;
+}
+.condition-img {
+    /* position: absolute; */
+    width: 140px;
+}
+.temperature {
+    font-weight: 600;
+    font-size: 40px;
+}
