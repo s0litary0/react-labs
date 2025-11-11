@@ -1,0 +1,38 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0b0c10;
+  color: #ffffff;
+  margin-top: 1rem;
+  padding: 4rem;
+  border: 1px solid hsl(0, 0%, 100%);
+}
+
+.about-logo {
+  width: 20rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px #ffe81f);
+}
+
+.about-title {
+  font-size: 2rem;
+  color: #ffe81f;
+  margin-bottom: 1.5rem;
+}
+
+.about-text {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #dcdcdc;
+}
+
+.about-text a {
+  color: #ffe81f;
+  text-decoration: none;
+}
+
+.about-text a:hover {
+  text-decoration: underline;
+}

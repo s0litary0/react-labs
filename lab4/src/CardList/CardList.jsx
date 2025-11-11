@@ -35,7 +35,9 @@ export default function CardList() {
 
   const filterdForecast = wheather?.forecast?.forecastday.filter((day) => {
     if (!searchValue) return true;
-    return day.date.includes(searchValue);
+    console.log((new Date(day.date)).toDateString())
+    return (new Date(day.date)).toDateString().includes(searchValue);
+    // return day.date.includes(searchValue);
   }) || [];
 
   return (

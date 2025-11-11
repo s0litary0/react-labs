@@ -1,0 +1,41 @@
+.characters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0b0c10;
+  color: #ffffff;
+  margin-top: 1rem;
+  padding: 4rem;
+  border: 1px solid hsl(0, 0%, 100%);
+}
+
+.characters-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffe81f;
+}
+
+.characters-search {
+  outline: none;
+  border: 1px solid hsl(0, 0%, 100%);
+  color: #ffffff;
+  background-color: #0b0c10;
+  width: 25rem;
+  height: 2rem;
+  font-size: 1rem;
+  padding: 0rem 1rem;
+}
+
+
+.characters-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.spinner-container {
+  grid-column: 3 / 4;
+}
