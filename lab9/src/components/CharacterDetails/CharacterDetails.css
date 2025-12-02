@@ -1,0 +1,38 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-title {
+  font-size: 2rem;
+  color: #ffe81f;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.details-grid p {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+}
+
+.back-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffe81f;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+  color: #fff;
+}

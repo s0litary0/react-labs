@@ -1,0 +1,22 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  border: 1px solid gray;
+  padding: 1rem;
+}
+
+.item__name {
+  display: inline-block;
+  color: #ffe81f;
+  width: 10rem;
+}
+
